@@ -1,0 +1,251 @@
+
+@font-face {
+    font-family: Ubuntu-Bold;
+    src: url('../fonts/ubuntu/Ubuntu-Bold.ttf'); 
+}
+@font-face {
+    font-family: Ubuntu-Regular;
+    src: url('../fonts/ubuntu/Ubuntu-Regular.ttf'); 
+  }
+
+*{
+    box-sizing: border-box;
+}
+.chat{
+    width : 100vw ; 
+	min-height:100vh ;
+	background-image: url('../images/mountain.jpg');
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	z-index: 1;
+}
+
+.chat::before {
+	content: "";
+	display: block;
+	position: absolute;
+	z-index: -1;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	background-color: rgba(0,0,0,0.65);z-index: 2;
+}
+.rooms-container{
+    padding: 50px 0;
+    color : white ; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+    font-family: sans-serif;
+    border : #ffb703 solid 1px ; 
+    z-index: 10;
+    position : relative ; 
+    width : 40vw ; 
+}
+
+.rooms-container::before{
+    content: "";
+    width : 100% ; 
+    height: 100%;
+    top : 0 ; 
+    left : 0 ; 
+    position: absolute;
+    background-color: rgba(0,0,0,0.65);
+    z-index: -1;
+}
+
+.rooms-container h1{
+    font-family: Ubuntu-Bold;
+  font-size: 28px;
+  color: #fff;
+  line-height: 1;
+  text-align: center;
+  text-transform: uppercase;
+  display: block;
+}
+
+.users-header{
+    margin-top : 30px ; 
+}
+
+.rooms-container .rooms{
+    display : flex ; 
+    align-items: center;
+    padding-top: 5px ;
+    margin-bottom: 15px;
+}
+
+.rooms-container .users{
+    display: flex;
+    width : 95% ; 
+    overflow-x: auto;
+    padding : 5px ; 
+    margin-top: 10px;
+}
+
+
+.rooms img,.users img{
+    width:70px ; 
+    height: 70px;
+    border-radius: 100%;
+    object-fit: cover;
+}
+
+.users button{
+    margin: 20px ;
+}
+.rooms .room{
+    margin :20px; 
+    display : flex ; 
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.rooms-container button h4{
+    transition : .5s ;
+    font-family: Ubuntu-Regular;
+    padding-top: 5px;
+}
+
+.rooms-container button:hover h4{
+    color:#ffb703
+}
+.rooms button,.users button{
+    color: white;
+    background-color: transparent;
+    outline: none;
+    border: none;
+    cursor : pointer ;
+    margin-right: 5px;
+}
+
+.rooms-container .logout{
+  background-color: transparent;
+}
+
+
+
+.rooms-container .login {
+    font-family: Ubuntu-Bold;
+    font-size: 18px;
+    color: #ffb703;
+    line-height: 1.2;
+    text-transform: uppercase;
+    border : #ffb703 solid 1px ;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 20px;
+    min-width: 160px;
+    height: 42px;
+    border-radius: 21px;
+    background: transparent;
+    position: relative;
+    z-index: 1;
+    margin-top : 20px ; 
+    -webkit-transition: all 0.4s;
+    -o-transition: all 0.4s;
+    -moz-transition: all 0.4s;
+    transition: all 0.4s;
+  }
+  
+  .rooms-container .login::before {
+    content: "";
+    display: block;
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    border-radius: 21px;
+    background-color: #ffb703;
+    top: 0;
+    left: 0;
+    opacity: 0;
+  
+    -webkit-transition: all 0.4s;
+    -o-transition: all 0.4s;
+    -moz-transition: all 0.4s;
+    transition: all 0.4s;
+  }
+  
+  .rooms-container .login:hover {
+    background-color: transparent;
+    border: white solid 1px;
+    color : white ; 
+
+  }
+  
+  .rooms-container .login:hover:before {
+    opacity: 1;
+  }
+  
+
+
+
+.rooms-container .users::-webkit-scrollbar-track
+{
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	border-radius: 10px;
+	background-color: #555;
+}
+
+.rooms-container .users::-webkit-scrollbar
+{
+	height: 7px;
+	background-color: #F5F5F5;
+}
+
+.rooms-container .users::-webkit-scrollbar-thumb
+{
+	border-radius: 10px;
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+	
+    background-color: #F5F5F5;
+}
+
+
+@media screen and (max-width:900px){
+    .rooms-container{
+        width : 60vw ;
+    }
+}
+
+@media screen and (max-width:750px){
+    .users h4{
+        font-size: 10px;
+    }
+}
+
+@media screen and (max-width:600px){
+    .rooms-container{
+        width : 100vw ;
+        height: 100vh;
+    }
+}
+
+
+@media screen and (max-width:500px){
+    .rooms-container .users{
+        width : 90vw ; 
+    }
+}
+
+@media screen and (max-width:330px){
+    .rooms-container{
+        width : 100vw ;
+        height: 100vh;
+    }
+}
