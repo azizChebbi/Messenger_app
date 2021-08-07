@@ -1,4 +1,5 @@
 *.css linguist-detectable=false
 *.Less linguist-detectable=false
 *.scss linguist-detectable=false
+*.HTML linguist-detectable=false
 *.js linguist-detectable=true
